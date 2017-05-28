@@ -3,8 +3,8 @@
 *{
 
 	box-sizing: border-box;
+	font-family:'Kumar One', cursive; 
 }
-
 
 body{
 
@@ -13,25 +13,36 @@ body{
 	background-repeat: repeat;	
 }
 
+.container{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 5%;
+}
+
 h1{
-	color: orange;
-	margin-bottom: 20px;
-	margin-top: 30px;
+	color: purple;
+	padding: 5px;
+	margin-bottom: 3%;
+	margin-top: 5%;
 	text-align: center;
 	text-shadow: 2px 2px grey;
 	font-size:350%;
+	font-family:'Kumar One', cursive;
 }
 
 #section{
 	background-color: yellow;
-	padding:70px;
-	opacity: 0.7;
-	border-radius:2%;
-	display: flex;
-	align-content: center;
-	margin-bottom: 50px;
-	display: flex;
+	padding:4%;
+	width: 70%;
+	opacity: 0.85;
+	border-radius: 10%;
+	display: flex;	
 	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	margin-bottom: 5%;
+	box-shadow: 2px 3px 3px 2px;
 }
 
 #startButton{
@@ -42,5 +53,51 @@ h1{
 #timer {
 	color: red;
 	font-size: 250%;
+	display: flex;
+	justify-content: center;
 }
-	
+
+#choices{
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	width:50%;
+}
+
+#a, #b, #c, #d{
+	margin-top: 10px;
+	color: orange;
+	background-color: purple;
+	width: 40%;
+	border-radius: 50%;
+	padding: 2%;
+	font-family:'Kumar One', cursive;
+	outline-style: none;
+}
+
+ #questions{
+ 	color: black;
+ 	font-size: 150%;
+ 	font-family:'Kumar One', cursive; 
+ 	display: flex;
+ 	align-content: center;
+ }
+
+ #questionChoice {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ }
+
+ #pics{
+ 	display: flex;
+ 	justify-content: center;
+ 	border-radius: 30%;
+ }
+
+ #answer{
+ 	display: flex;
+ 	justify-content: center;
+ }
+
+ 
