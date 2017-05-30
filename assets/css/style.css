@@ -3,7 +3,7 @@
 *{
 
 	box-sizing: border-box;
-	font-family:'Kumar One', cursive; 
+	font-family:'Indie Flower', cursive; 
 }
 
 body{
@@ -27,8 +27,8 @@ h1{
 	margin-top: 5%;
 	text-align: center;
 	text-shadow: 2px 2px grey;
-	font-size:350%;
-	font-family: 'Anton', sans-serif;
+	font-size:350%; 
+	font-family: 'Indie Flower', cursive; 
 }
 
 #section{
