@@ -2,13 +2,11 @@
 var startButton = $("#startButton").html("<img src ='assets/images/playNowTrans.png' width='250px'/>");
 timer = 30;
 var answer = $("#answer");
-var questions = $("#questions");
+var questions = $("#questions")
 var pics = $("pics");
 var wait;
 var questions;
 var button = $(".button");
-var fadeOut;
-
 $("#startButton").show();
 $("#timer").hide();
 $("#questionChoice").hide();
@@ -51,9 +49,10 @@ var questions = [
 /////////////Set time Interval/////////////////
 ////////////////////////////////////////////////
 
-
+var score = 0;
 var timer = 30;
 var intervalId;
+var totalScore = score;
 function run() {
 	intervalId = setInterval(decrement, 1000);
 }
@@ -66,17 +65,14 @@ if (timer === 0) {
 	alert("Time Up!!");
 	$("#questionChoice").empty();
 	$("#pics").html('<img src="assets/images/byeGif.gif" width="80% height="auto"/>');
+	$("#timer").hide;
+	$("#questions").document.write("YOU LOST!!");
   }
 }
 
 function stop() {
 	clearInterval(intervalId);
 }
-
-
-
-
-
 
 /////////start game///////////////////
 	$("#startButton").click(function(){
@@ -93,13 +89,8 @@ function stop() {
 	// });
    
     buttonWork(0);
-    
-    
-
+  
 });
-
-
-
 
   function buttonWork(index) {
     
@@ -113,9 +104,11 @@ function stop() {
 
 
 
-	$("#a").on("click", function(){
+	$("#a").unbind().on("click", function(){
 		 if(questions[index].choices[0] === questions[index].key ){
 		 	console.log("correct");
+		 	score++;
+		 	console.log(score);
 		 	$("#answer").show();
 		 	$("#pics").show();
 		 	$("#pics").html('<img src="assets/images/niceGif.gif" width="80% height="auto"/>');
@@ -154,20 +147,24 @@ function stop() {
 
 			}, 5000);
 
+
+
 	})	
 
-	$("#b").on("click", function(){
+	$("#b").unbind().on("click", function(){
           if(questions[index].choices[1] === questions[index].key ){
 		 	console.log("correct");
+		 	score++;
+		 	console.log(score);
 		 	$("#answer").show();
 		 	$("#pics").show();
-		 	$("#pics").html('<img src="assets/images/niceGif.gif" width="80% height="auto"/>');
+		 	$("#pics").html('<img src="assets/images/ahGif.gif" width="80% height="auto"/>');
 		$("#answer").html("CORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }else{
 		 	console.log("wrong");
 		 	$("#answer").show();
 		 	$("#pics").show();
-		 	$("#pics").html('<img src="assets/images/noGif.gif" width="80% height="auto"/>');
+		 	$("#pics").html('<img src="assets/images/failGif.gif" width="80% height="10px"/>');
 		$("#answer").html("INCORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }
 
@@ -198,18 +195,20 @@ function stop() {
 			}, 5000);
 	})	
 
-	$("#c").on("click", function(){
+	$("#c").unbind().on("click", function(){
 		if(questions[index].choices[2] === questions[index].key ){
 		 	console.log("correct");
+		 	score++;
+		 	
 		 	$("#answer").show();
 		 	$("#pics").show();
-		 	$("#pics").html('<img src="assets/images/niceGif.gif" width="80% height="auto"/>');
+		 	$("#pics").html('<img src="assets/images/ahGif.gif" width="80% height="auto"/>');
 		$("#answer").html("CORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }else{
 		 	console.log("wrong");
 		 	$("#answer").show();
 		 	$("#pics").show();
-		 	$("#pics").html('<img src="assets/images/noGif.gif" width="80% height="auto"/>');
+		 	$("#pics").html('<img src="assets/images/toughGif.gif" width="80% height="auto"/>');
 		$("#answer").html("INCORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }
 
@@ -240,19 +239,21 @@ function stop() {
 			}, 5000);
 	})
 
-	$("#d").on("click", function(){
+	$("#d").unbind().on("click", function(){
 
 		if(questions[index].choices[3] === questions[index].key ){
 		 	console.log("correct");
+		 	score++;
+		 	
 		 	$("#answer").show();
 		 	$("#pics").show();
-			$("#pics").html('<img src="assets/images/niceGif.gif" width="80% height="auto"/>');
+			$("#pics").html('<img src="assets/images/yayGif.gif" width="80% height="auto"/>');
 			$("#answer").html("CORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }else{
 		 	console.log("wrong");
 		 	$("#answer").show();
 		 	$("#pics").show();
-			$("#pics").html('<img src="assets/images/noGif.gif" width="80% height="auto"/>');
+			$("#pics").html('<img src="assets/images/breakdownGif.gif" width="80% height="auto"/>');
 			$("#answer").html("INCORRECT!! " + "'" + questions[index].key + "'" + " is an answer.");
 		 }
 
@@ -320,3 +321,11 @@ function stop() {
 	// setTimeout(function(){
 	// $("#content").empty();
 	// }, 8000);
+
+
+
+// score = 0;
+// $("button").click(function(){
+// score++;
+// console.log(score);
+// });
