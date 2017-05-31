@@ -111,6 +111,10 @@ h1{
  display: flex;
  justify-content: center;
  color: red;
+ align-items: center;
  margin-top: 5%;
- font-size: 100%
+ font-size: 120%
+ font-family:'Indie Flower', cursive;
+ border-radius: 3%;
+
 }
