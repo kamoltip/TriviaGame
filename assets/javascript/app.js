@@ -7,9 +7,13 @@ var pics = $("pics");
 var wait;
 var questions;
 var button = $(".button");
+var score = 0;
+var timer = 30;
+var intervalId;
 $("#startButton").show();
 $("#timer").hide();
 $("#questionChoice").hide();
+
 
 var questions = [
 {
@@ -49,10 +53,6 @@ var questions = [
 /////////////Set time Interval/////////////////
 ////////////////////////////////////////////////
 
-var score = 0;
-var timer = 30;
-var intervalId;
-var totalScore = score;
 function run() {
 	intervalId = setInterval(decrement, 1000);
 }
@@ -61,14 +61,20 @@ function decrement(){
 	$("#timer").html(timer);
 
 if (timer === 0) {
+	$("#timer").hide();
 	stop();
 	alert("Time Up!!");
 	$("#questionChoice").empty();
 	$("#pics").html('<img src="assets/images/byeGif.gif" width="80% height="auto"/>');
-	$("#timer").hide;
-	$("#questions").document.write("YOU LOST!!");
+  	  $("#reset").html("Try Again"); 
+  	  $("#finalResult").html("You think too long !" + "<br/>" + "Your score: " + score + "/5"); 
+         $("#reset").click(function(){
+         	location.reload();
+         });
   }
 }
+
+
 
 function stop() {
 	clearInterval(intervalId);
@@ -101,13 +107,11 @@ function stop() {
 	$("#c").html(questions[index].choices[2]);
 	$("#d").html(questions[index].choices[3]);
 
-
-
-
 	$("#a").unbind().on("click", function(){
 		 if(questions[index].choices[0] === questions[index].key ){
 		 	console.log("correct");
 		 	score++;
+		 	$("#finalResult").html("score : " + score);
 		 	console.log(score);
 		 	$("#answer").show();
 		 	$("#pics").show();
@@ -123,8 +127,9 @@ function stop() {
 			
 		 }
 
+
 		$("#questionChoice").hide();
-		stop();
+		stop(); 
 		
 		   setTimeout(function(){
 			//$("#content").empty();
@@ -139,9 +144,18 @@ function stop() {
 	          timer =31 ;
 	          run();
 	          buttonWork(index);
+	         
               }else{
+				
+              $("#pics, #timer, #content").hide();
 
-              	$("#content").empty();
+              $("#finalResult").html("Total scores : " + "<br/>" + "You got " + score + " out of 5 !!");
+              console.log(score);
+              $("#reset").html("Try Again");
+               $("#reset").click(function(){
+         		location.reload();
+         });
+
               }
              
 
@@ -155,6 +169,7 @@ function stop() {
           if(questions[index].choices[1] === questions[index].key ){
 		 	console.log("correct");
 		 	score++;
+		 	$("#finalResult").html("score : " + score);
 		 	console.log(score);
 		 	$("#answer").show();
 		 	$("#pics").show();
@@ -184,13 +199,22 @@ function stop() {
 	          timer =31 ;
 	          run();
 	          buttonWork(index);
+	          
               }else{
 
-              	$("#content").empty();
+              $("#pics, #timer, #content").hide();
+
+              $("#finalResult").html("Total scores : " + "<br/>" + "You got " + score + " out of 5 !!");
+              console.log(score);
+              $("#reset").html("Try Again");
+               $("#reset").click(function(){
+         		location.reload();
+         });
+              	// $("#content").empty();
+              
+              	
               }
-             
-   
-             
+  
 
 			}, 5000);
 	})	
@@ -199,6 +223,7 @@ function stop() {
 		if(questions[index].choices[2] === questions[index].key ){
 		 	console.log("correct");
 		 	score++;
+		 	$("#finalResult").html("score : " + score);
 		 	
 		 	$("#answer").show();
 		 	$("#pics").show();
@@ -227,14 +252,21 @@ function stop() {
 	          run();
 	          index = index+1;	
 	          buttonWork(index);
-
+			
               }else{
 
-              	$("#content").empty();
+              $("#pics, #timer, #content").hide();
 
+              $("#finalResult").html("Total scores : " + "<br/>" + "You got " + score + " out of 5 !!");
+              console.log(score);
+              $("#reset").html("Try Again");
+               $("#reset").click(function(){
+         		location.reload();
+         });
+              	// $("#content").empty();
+              	
               }
-             
-   
+    
              
 			}, 5000);
 	})
@@ -244,6 +276,7 @@ function stop() {
 		if(questions[index].choices[3] === questions[index].key ){
 		 	console.log("correct");
 		 	score++;
+		 	$("#finalResult").html("score : " + score);
 		 	
 		 	$("#answer").show();
 		 	$("#pics").show();
@@ -273,25 +306,29 @@ function stop() {
 	          run();	
 	          index = index+1;	
 	          buttonWork(index);
+	         
               }else{
 
+              $("#pics, #timer, #content").hide();
 
-              	$("#content").empty();
+              $("#finalResult").html("Total scores : " + "<br/>" + "You got " + score + " out of 5 !!");
+              console.log(score);
+              $("#reset").html("Try Again");
+               $("#reset").click(function(){
+         		location.reload();
+         });
+
+              	// $("#content").empty();
               }
              
              
 			}, 5000);
+
 	})
+ } 	
 
-
-
-
-
-
-
-  } 	
-
-
+		
+		
 
 
 

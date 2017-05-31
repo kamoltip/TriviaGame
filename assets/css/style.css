@@ -100,4 +100,17 @@ h1{
  	justify-content: center;
  }
 
- 
+ #finalResult{
+ 	margin-top: 5%;
+ 	font-size: 30px;
+ 	color: black;
+ 	display: flex;
+ 	justify-content: center;
+ }
+ #reset{
+ display: flex;
+ justify-content: center;
+ color: red;
+ margin-top: 5%;
+ font-size: 100%
+}
